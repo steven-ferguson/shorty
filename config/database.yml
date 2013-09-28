@@ -1,0 +1,9 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+
+development:
+  adapter: postgresql
+  database: shorty_url_development
+
+test:
+  adapter: postgresql
+  database: shorty_url_test
