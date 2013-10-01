@@ -1,0 +1,12 @@
+<div class="section">
+	<h1>Here's your shorty:
+		<small>
+			<%= link_to "#{request.base_url}/#{@url.short}", "#{request.base_url}/#{@url.short}" %>
+		</small>
+	</h1>
+  <p>This link has been visited <%= pluralize(@url.visits.count, 'time') %></p>
+</div>
+
+<div class="section">
+	<%= link_to "Create another shorty", new_url_path, :class => 'btn btn-primary btn-lg btn-block' %>
+</div>

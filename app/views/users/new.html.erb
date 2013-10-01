@@ -1,0 +1,36 @@
+<h1>Sign up</h1>
+
+<%= form_for @user, url: user_path, html: {class: "form-horizontal"}  do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label(:email, class: "control-label") %>
+    <div class="controls">
+      <%= f.text_field(:email, class: "form-control") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label(:password, class: "control-label") %>
+    <div class="controls">
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label(:password_confirmation, class: "control-label") %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit 'Sign up!', class: "btn btn-primary form-button" %>
+    </div>
+  </div>
+<% end %>

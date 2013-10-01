@@ -26,4 +26,7 @@ describe Url do
 			expect(url.short).to eq "shorty#{url.id}"
 		end
 	end
+
+	it { should have_many :visits }
+	it { should belong_to :user }
 end

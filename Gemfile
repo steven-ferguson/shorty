@@ -9,14 +9,14 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass'
 gem 'validate_url'
+gem 'bcrypt-ruby', '3.0.1' 
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :test do 
 	gem 'shoulda-matchers'
 end 
-
-gem 'bcrypt-ruby'

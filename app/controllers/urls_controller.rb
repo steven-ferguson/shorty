@@ -4,14 +4,19 @@ class UrlsController < ApplicationController
   end
 
   def create
-  	@new_url = Url.new(url_params)
-
-  	if @new_url.save
-  		render :new, notice: "Shorty'd!"
+    @url = Url.new(url_params)
+    @url.update(user: current_user)
+  	
+    if @url.save
+  		redirect_to @url, notice: "Shorty'd!"
   	else
-  		render :new, alert: "Something went wrong"
+      flash[:alert] = "Not a valid url."
+  		render 'new'
   	end
+  end
 
+  def show
+    @url = Url.find(params[:id])
   end
 
 private
